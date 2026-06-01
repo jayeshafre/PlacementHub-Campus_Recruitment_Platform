@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login               from './pages/Login';
 import Register            from './pages/Register';
-import Forgotpassword      from './pages/Forgotpassword';
-import Resetpassword       from './pages/Resetpassword';
+import Forgotpassword      from './pages/ForgotPassword';
+import Resetpassword       from './pages/ResetPassword';
 import Dashboard           from './pages/Dashboard';
 import StudentProfile      from './pages/StudentProfile';
 import RecruiterProfile    from './pages/RecruiterProfile';
@@ -44,8 +44,8 @@ function App() {
           {/* ── Public ─────────────────────────────────────────── */}
           <Route path="/login"           element={<Login />} />
           <Route path="/register"        element={<Register />} />
-          <Route path="/forgot-password" element={<Forgotpassword />} />
-          <Route path="/reset-password"  element={<Resetpassword />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password"  element={<ResetPassword />} />
 
           {/* ── Shared ─────────────────────────────────────────── */}
           <Route path="/dashboard" element={
