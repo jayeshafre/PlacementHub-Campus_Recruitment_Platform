@@ -13,9 +13,9 @@ python manage.py migrate
 
 python manage.py shell -c "
 from users.models import CustomUser
-if not CustomUser.objects.filter(email='admin@ex.com').exists():
-    CustomUser.objects.create_superuser(username='admin', email='admin@ex.com', password='Admin@123', full_name='Admin')
+if not CustomUser.objects.filter(email='admin@admin.com').exists():
+    CustomUser.objects.create_superuser(email='admin@admin.com', password='Admin@123', full_name='Admin')
     print('Superuser created')
 else:
     print('Already exists')
-"
+" || true
