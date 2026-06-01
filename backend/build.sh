@@ -11,4 +11,11 @@ python manage.py collectstatic --no-input
 # Apply database migrations
 python manage.py migrate
 
-python manage.py createsuperuser --noinput || true
+python manage.py shell -c "
+from users.models import CustomUser
+if not CustomUser.objects.filter(email='admin@ex.com').exists():
+    CustomUser.objects.create_superuser(username='admin', email='admin@ex.com', password='Admin@123', full_name='Admin')
+    print('Superuser created')
+else:
+    print('Already exists')
+"
